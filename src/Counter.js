@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; // ---1-й шаг - импорт connect из react-redux теперь - экспортируется connect компонент 
 
-class App extends Component {
+class Counter extends Component {
   state = { count: 0};
   increment = () => {
-
-    //---React--- this.setState({ count: this.state.count + 1 });
+    //---React без Redux--- this.setState({ count: this.state.count + 1 });
+    this.props.dispatch({type: "INCREMENT"});
   };
   decrement = () =>{
-    //---React--- this.setState({ count: this.state.count - 1 });
+    //---React без Redux--- this.setState({ count: this.state.count - 1 });
+    this.props.dispatch({type: "DECREMENT"})
   };
 
   render() {
@@ -29,4 +30,4 @@ const mapStateToProps = (state) => ({  // --- 2-й шаг определяем �
   count: state.count
 }); 
 
-export default connect(mapStateToProps)(App); //привязывает стейт к пропсам и оборачивает компонент
+export default connect(mapStateToProps)(Counter); //привязывает стейт к пропсам и оборачивает компонент передает методы store в компонент 
