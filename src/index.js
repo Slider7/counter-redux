@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Counter from './Counter';
+import Counter from './Counter.jsx';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from "redux";
 import { Provider } from "react-redux";

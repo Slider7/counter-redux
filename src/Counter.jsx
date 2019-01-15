@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; // ---1-й шаг - импорт connect из react-redux теперь - экспортируется connect компонент 
 
 class Counter extends Component {
-  state = { count: 0};
+  state = {};
   increment = () => {
     //---React без Redux--- this.setState({ count: this.state.count + 1 });
     this.props.dispatch({type: "INCREMENT"});
